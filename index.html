@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.10.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Phone Hunter</title>
+</head>
+<body>
+    <header>
+        <nav class="ml-36 mr-36 mt-5">
+            <div class="navbar bg-base-100">
+                <div class="navbar-start">
+                  <div class="dropdown">
+                    <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                    </div>
+                    <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                    </ul>
+                  </div>
+                  <a class="btn btn-ghost text-[#403f3f] text-2xl font-bold">Hot Gadgets</a>
+                </div>
+                <div class="navbar-end">
+                  <a class="btn bg-[#0D6EFD] text-white w-32 h-12 text-base hover:bg-[#0d5ed6]">Sign Up</a>
+                </div>
+              </div>
+        </nav>
+        <!-- banner -->
+        <section class="">
+            <div class="mt-20">
+                <div class="grid grid-row-3 text-center gap-8">
+                    <div class="font-bold text-6xl text-black">
+                        <h1>Apple Iphone 13 Pro Max</h1>
+                    </div>
+                    <div class="text-[#706f6f] text-lg font-normal">
+                        <p>There are many variations of passages of Lorem Ipsum available, but the <br> majority have suffered alteration in some form, by injected humou.</p>
+                    </div>
+                    <div>
+                        <button class="btn bg-[#0D6EFD] text-white w-32 h-12 text-base hover:bg-[#0d5ed6]">Buy Now</button>
+                    </div>
+                </div>
+                <div class="flex justify-center">
+                    <img src="images/Group 48095420.png" alt="">
+                </div>
+            </div>
+        </section>
+    </header>
+    <!-- Search box -->
+    <section class="text-center space-y-5 mt-10">
+        <div>
+            <h1 class="text-4xl font-semibold text-black">Search your phone</h1>
+        </div>
+        <div class="">
+            <input type="text" placeholder="Search your favorite phone company" class="bg-[#100f0f0d] text-xl p-5 w-96 h-11 rounded-md" id="search-field">
+            <button class="btn bg-[#0D6EFD] text-white w-32 h-12 text-base hover:bg-[#0d5ed6]" onclick="handleSearch()">Search</button>
+        </div>
+    </section>
+    <main class="flex justify-center">
+        
+        <!-- device name -->
+        <section>
+            <div class="hidden text-center my-10" id="loading">
+                <span class="loading loading-dots loading-lg"></span>
+            </div>
+            <div id="phone-container" class="grid grid-cols-3 gap-5 mt-10">
+                <!-- <div class="card w-96 bg-base-100 shadow-xl">
+                    <figure><img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
+                    <div class="card-body">
+                      <h2 class="card-title">Shoes!</h2>
+                      <p>If a dog chews shoes whose shoes does he choose?</p>
+                      <div class="card-actions justify-end">
+                        <button class="btn btn-primary">Buy Now</button>
+                      </div>
+                    </div>
+                  </div> -->
+            </div>
+            <div class="hidden text-center mt-10" id="show-all-container">
+                <button onclick="handleShowAll()" class="btn btn-outline text-[#0d5ed6] w-32 h-12 text-base hover:bg-[#0d5ed6] hover:border-none">Show All</button>
+            </div>
+        </section>
+        <!-- Open the modal using ID.showModal() method -->
+        <dialog id="show_details_modal" class="modal">
+        <div class="modal-box w-[750px] h-[1200px]">
+            <div id="phone-details-container">
+                
+            </div>
+            <div class="modal-action">
+            <form method="dialog">
+                <!-- if there is a button in form, it will close the modal -->
+                <button class="btn bg-[#dc3545] text-white hover:bg-[#c9303f]">Close</button>
+            </form>
+            </div>
+        </div>
+        </dialog>
+    </main>
+    <!-- scripts -->
+    <script src="api.js"></script>
+</body>
+</html>
